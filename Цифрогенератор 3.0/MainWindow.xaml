@@ -1,0 +1,350 @@
+﻿<Window x:Class="Цифрогенератор_3._0.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Цифрогенератор_3._0"
+        mc:Ignorable="d"        
+        WindowStartupLocation="CenterScreen" Title="Цифрогенератор 3.0" Height="550" Width="450"
+        AllowsTransparency ="True"
+        WindowStyle="None"
+        Background="Transparent">
+
+    <Grid>
+        <Grid Grid.ColumnSpan="19" Grid.RowSpan="19" Background="AliceBlue" Opacity="0.9"/>
+        <Rectangle Grid.Column="0" Grid.ColumnSpan="19" Fill="Gainsboro" MouseLeftButtonDown="Rectangle_MouseLeftButtonDown"></Rectangle>
+        <WrapPanel Grid.ColumnSpan="19" HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Width="Auto" Panel.ZIndex="1">
+            <Button Width="20" Height="20" Margin="5" Click="Button_Click_4">_</Button>
+            <Button Width="20" Height="20" Margin="5" Click="Button_Click_5">口</Button>
+            <Button Width="20" Height="20" Margin="5" Click="Button_Click_6">X</Button>
+        </WrapPanel>
+
+        <Image Grid.Row="0" Source="D:\Ц в клетке\Цифрогенератор 3.0\Цифрогенератор 3.0\g.png" Grid.ColumnSpan="2" MouseLeftButtonDown="Image_MouseLeftButtonDown"/>
+        <TabControl Background="Transparent" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="19" Grid.RowSpan="18"  BorderBrush="Transparent" >
+            <TabItem x:Name="Com" Grid.ColumnSpan="3" Header="Обычный" FontFamily="Segoe UI Black" FontSize="15" MouseLeftButtonUp="Com_MouseLeftButtonUp">
+                <Grid x:Name="Gridik">
+
+                    <TextBox x:Name="MainT" IsReadOnly ="True"  Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="19" Grid.RowSpan="3" TextAlignment="Right" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="NoWrap" FontFamily="Verdana" FontSize="36" MaxLines="1"/>
+                    <TextBox x:Name="KidT" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="17" Grid.RowSpan="2" BorderBrush="Transparent" Background="Transparent" TextAlignment="Right" IsReadOnly="True" TextOptions.TextHintingMode="Animated" TextWrapping="Wrap" FontSize="14" FontFamily="Verdana"/>
+
+                    <Button x:Name="MultiplyMinus" Content="+/-" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="17" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Zero" Content="0" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="17" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Comma" Content="," Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="17" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Equally" Content="=" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="17" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+
+                    <Button x:Name="One" Content="1" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="15" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Two" Content="2" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="15" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Three" Content="3" Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="15" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Plus" Content="+" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="15" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+
+                    <Button x:Name="Four" Content="4" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="13" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Five" Content="5" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="13" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Six" Content="6" Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="13" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Minus" Content="-" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="13" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+
+                    <Button x:Name="Seven" Content="7" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="11" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Eight" Content="8" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="11" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Nine" Content="9" Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="11" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Multiply" Content="*" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="11" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+
+                    <Button x:Name="OneDivide" Content="1/x" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="9" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="Sqr" Content="Sqr(x)"  Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="9" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30" IsCancel="True" />
+                    <Button x:Name="Sqrt" Content="Sqrt(x)" Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="9" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30" />
+                    <Button x:Name="Divide" Content="/" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="9" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+
+                    <Button x:Name="Procent" Content="%" Grid.Column="0" Grid.ColumnSpan="5" Grid.Row="7" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="DelLast" Content="CE" Grid.Column="5" Grid.ColumnSpan="5" Grid.Row="7" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="DelAll" Content="C" Grid.Column="10" Grid.ColumnSpan="5" Grid.Row="7" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button x:Name="DelSym" Content="Z" Grid.Column="15" Grid.ColumnSpan="5" Grid.Row="7" Grid.RowSpan="2" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Wingdings 3" FontSize="36" />
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Inzhe" Header="Инженерный" FontFamily="Segoe UI Black" FontSize="15" MouseLeftButtonUp="Inzhe_MouseLeftButtonUp">
+                <Grid x:Name="GrIn">
+                    <TextBox x:Name="TMI" IsReadOnly ="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="20" Grid.RowSpan="3" TextAlignment="Right" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="NoWrap" FontFamily="Verdana" FontSize="36" MaxLines="1"/>
+                    <TextBox x:Name="TKI" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="18" Grid.RowSpan="2" BorderBrush="Transparent" Background="Transparent" TextAlignment="Right" IsReadOnly="True" TextOptions.TextHintingMode="Animated" TextWrapping="Wrap" FontSize="14" FontFamily="Verdana"/>
+
+                    <Button x:Name="s6" Content="Ln" Grid.Column="0" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="26"/>
+                    <Button Content="+/-" Grid.Column="4" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="0" Grid.Column="8" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="," Grid.Column="12" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="=" Grid.Column="16" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="s5" Content="log" Grid.Column="0" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="20"/>
+                    <Button Content="1" Grid.Column="4" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="2" Grid.Column="8" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="3" Grid.Column="12" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="+" Grid.Column="16" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="s4" Content="10^x" Grid.Column="0" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="24"/>
+                    <Button Content="4" Grid.Column="4" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="5" Grid.Column="8" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="6" Grid.Column="12" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="-" Grid.Column="16" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="s3" Content="x^y" Grid.Column="0" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="24"/>
+                    <Button Content="7" Grid.Column="4" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="8" Grid.Column="8" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="9" Grid.Column="12" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="*" Grid.Column="16" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="s2" Content="Sqrt(x)" Grid.Column="0" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="24"/>
+                    <Button Content="(" Grid.Column="4" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content=")" Grid.Column="8" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="n!" Grid.Column="12" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="/" Grid.Column="16" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="s1" Content="Sqr(x)" Grid.Column="0" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="24"/>
+                    <Button Content="1/x" Grid.Column="4" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="|x|" Grid.Column="8" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="exp" Grid.Column="12" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="mod" Grid.Column="16" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button x:Name="Sec" Content="Second" Grid.Column="0" Grid.RowSpan="2" Grid.Row="8" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="20" Click="Sec_Click" />
+                    <Button Content="Pi" Grid.Column="4" Grid.RowSpan="2" Grid.Row="8" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="e" Grid.Column="8" Grid.RowSpan="2" Grid.Row="8" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="C" Grid.Column="12" Grid.RowSpan="2" Grid.Row="8" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="Z" Grid.Column="16" Grid.RowSpan="2" Grid.Row="8" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Wingdings 3" FontSize="36"/>
+
+                    <Button x:Name="Nometry" Content="Тригонометрия" Grid.Column="0" Grid.RowSpan="2" Grid.Row="6" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="10" Click="Nometry_Click"/>
+                    <Button x:Name="sin" Content="" Grid.Column="4" Grid.RowSpan="2" Grid.Row="6" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30"/>
+                    <Button x:Name="cos" Content="" Grid.Column="8" Grid.RowSpan="2" Grid.Row="6" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30"/>
+                    <Button x:Name="tg" Content="" Grid.Column="12" Grid.RowSpan="2" Grid.Row="6" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30"/>
+                    <Button x:Name="ctg" Content="" Grid.Column="16" Grid.RowSpan="2" Grid.Row="6" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="30"/>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+            <TabItem x:Name="Progr" Header="Программист" FontFamily="Segoe UI Black" FontSize="15" MouseLeftButtonUp="Progr_MouseLeftButtonUp">
+                <Grid x:Name="Progra">
+
+                    <TextBox x:Name="TMP" IsReadOnly ="True" Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="20" Grid.RowSpan="3" TextAlignment="Right" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="NoWrap" FontFamily="Verdana" FontSize="36" MaxLines="1"/>
+                    <TextBox x:Name="TKP" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="18" Grid.RowSpan="2" BorderBrush="Transparent" Background="Transparent" TextAlignment="Right" IsReadOnly="True" TextOptions.TextHintingMode="Animated" TextWrapping="Wrap" FontSize="14" FontFamily="Verdana"/>
+                    <Button x:Name="hex" Content="Hex" Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" BorderBrush="Transparent" Click="hex_Click"/>
+                    <TextBox x:Name="thex" TextAlignment="Right" Grid.Row="6" Grid.Column="3" Grid.ColumnSpan="20" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="Wrap" FontSize="14" IsReadOnly="True"/>
+                    <Button x:Name="dec" Content="Dec" Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" BorderBrush="Transparent" Click="dec_Click"/>
+                    <TextBox x:Name="tdec" TextAlignment="Right" Grid.Row="7" Grid.Column="3" Grid.ColumnSpan="20" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="Wrap" FontSize="14" IsReadOnly="True"/>
+                    <Button x:Name="oct" Content="Oct" Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" BorderBrush="Transparent" Click="oct_Click"/>
+                    <TextBox x:Name="toct" TextAlignment="Right" Grid.Row="8" Grid.Column="3" Grid.ColumnSpan="20" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="Wrap" FontSize="14" IsReadOnly="True"/>
+                    <Button x:Name="bin" Content="Bin" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" BorderBrush="Transparent" Click="bin_Click"/>
+                    <TextBox x:Name="tbin" TextAlignment="Right" Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="20" Background="AliceBlue" BorderBrush="Transparent" TextWrapping="Wrap" FontSize="14" IsReadOnly="True"/>
+
+
+
+                    <Button Content="F" x:Name="F16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="+/-" Grid.Column="4" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="0" x:Name="B0" Grid.Column="8" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="," Grid.Column="12" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="=" Grid.Column="16" Grid.RowSpan="2" Grid.Row="20" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button Content="E" x:Name="E16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="1" x:Name="B1" Grid.Column="4" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="2" x:Name="B2" Grid.Column="8" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="3" x:Name="B3" Grid.Column="12" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="+" Grid.Column="16" Grid.RowSpan="2" Grid.Row="18" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button Content="D" x:Name="D16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="4" x:Name="B4" Grid.Column="4" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="5" x:Name="B5" Grid.Column="8" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="6" x:Name="B6" Grid.Column="12" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="-" Grid.Column="16" Grid.RowSpan="2" Grid.Row="16" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button Content="C" x:Name="C16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="7" x:Name="B7" Grid.Column="4" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="8" x:Name="B8" Grid.Column="8" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="9" x:Name="B9" Grid.Column="12" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="*" Grid.Column="16" Grid.RowSpan="2" Grid.Row="14" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button Content="B" x:Name="B16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="(" Grid.Column="4" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content=")" Grid.Column="8" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="%" Grid.Column="12" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="/" Grid.Column="16" Grid.RowSpan="2" Grid.Row="12" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+
+                    <Button Content="A" x:Name="A16" Grid.Column="0" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36" />
+                    <Button Content="" Grid.Column="4" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="" Grid.Column="8" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="CE" Grid.Column="12" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Verdana" FontSize="36"/>
+                    <Button Content="Z" Grid.Column="16" Grid.RowSpan="2" Grid.Row="10" Grid.ColumnSpan="4" Background="AliceBlue" BorderBrush="Transparent" FontFamily="Wingdings 3" FontSize="36"/>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+    </Grid>
+</Window>
